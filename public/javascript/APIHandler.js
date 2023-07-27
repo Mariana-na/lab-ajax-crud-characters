@@ -19,14 +19,16 @@ class APIHandler {
 
   }
 
-  getOneRegister (id) {
-    axios
-    .get("http://localhost:3000/characters/:id")
-    .then ((response) => response.json())
-    .then ((data) => {
-      console.log(data)
-    })
-    .catch ((error) => console.log(error));
+  async getOneRegister (characterId) {
+    const response = await axios.get (`http://localhost:3000/characters/${characterId}`);
+
+    if (response.status === 200) {
+      console.log("working")
+    } else {
+      console.log("wrong")
+    }
+    
+    return response.data
   }
 
   createOneRegister (characterInfo) {
@@ -40,7 +42,7 @@ class APIHandler {
   }
 
   async deleteOneRegister (characterId) {
-    const response = await axios.delete ('http://localhost:3000/characters/:id');
+    const response = await axios.delete (`http://localhost:3000/characters/${characterId}`);
     if (response.status === 200) {
       console.log("Successfuly deleted")
     } else {

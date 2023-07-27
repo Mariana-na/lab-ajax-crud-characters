@@ -20,11 +20,46 @@ window.addEventListener('load', () => {
 
   });
 
-  document.getElementById('fetch-one').addEventListener('click', function (event) {
+  document.getElementById('fetch-one').addEventListener('click', async () => {
+
+    try {
+      const characterId = document.getElementsByName("character-id")[0].value;
+      console.log(characterId)
+      const findOne = await charactersAPI.getOneRegister(characterId);
+
+      const charactersContainer = document.querySelector('.characters-container');
+      charactersContainer.innerHTML = '';
+
+      const card = characterCard(findOne);
+      charactersContainer.appendChild(card);
+
+    } catch (error) {
+      console.log(error)
+    }
 
   });
 
-  document.getElementById('delete-one').addEventListener('click', function (event) {
+  document.getElementById('delete-one').addEventListener('click', async () => {
+
+    try {
+
+      const characterId = document.getElementsByName("character-id")[0].value;
+      console.log(characterId)
+
+      const deleteCharacter = await charactersAPI.deleteOneRegister(characterId);
+
+      if (deleteCharacter.status === 200) {
+        console.log("deleted");
+        document.getElementById("delete-one").style.backgroundColor = "green";
+      } else {
+        console.log("There's been an error")
+        document.getElementById("delete-one").style.backgroundColor = "red";
+      }
+
+    } catch (error) {
+      console.log(error);
+      document.getElementById("delete-one").style.backgroundColor = "red";
+    }
 
   });
 

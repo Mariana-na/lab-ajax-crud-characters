@@ -43,7 +43,7 @@ window.addEventListener('load', () => {
 
     try {
 
-      const characterId = document.getElementsByName("character-id")[0].value;
+      const characterId = document.getElementsByName("character-id-delete")[0].value;
       console.log(characterId)
 
       const deleteCharacter = await charactersAPI.deleteOneRegister(characterId);

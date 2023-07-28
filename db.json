@@ -19,21 +19,21 @@
       "occupation": "string",
       "cartoon": "boolean",
       "weapon": "string",
-      "id": 4
-    },
-    {
-      "name": "string",
-      "occupation": "string",
-      "cartoon": "boolean",
-      "weapon": "string",
-      "id": 5
-    },
-    {
-      "name": "string",
-      "occupation": "string",
-      "cartoon": "boolean",
-      "weapon": "string",
       "id": 6
+    },
+    {
+      "name": "string",
+      "occupation": "string",
+      "cartoon": "boolean",
+      "weapon": "string",
+      "id": 7
+    },
+    {
+      "name": "string",
+      "occupation": "string",
+      "cartoon": "boolean",
+      "weapon": "string",
+      "id": 9
     }
   ]
 }
